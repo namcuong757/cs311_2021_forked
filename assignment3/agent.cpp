@@ -44,12 +44,13 @@ queue<string> load_queue_from_file()
 
 void make_decisions(string opponent_last_move)
 {
-	queue<string> decisions = load_queue_from_file();
-	if(decisions.size() < 1)
+	if(opponent_last_move == "zero")
 	{
 		decisions.push("confess");
-		decisions.push("confess");
+                decisions.push("confess");
+		decisions.push("silence");
 	}
+	queue<string> decisions = load_queue_from_file();
 	decisions.push(opponent_last_move);
 	cout << decisions.front() << endl;
 	decisions.pop();
