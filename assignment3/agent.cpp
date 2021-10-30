@@ -3,6 +3,7 @@
 #include <queue>
 #include <fstream>
 using namespace std;
+
 void write_queue_to_file(queue<string>& decisions)
 {
 	int size = decisions.size();
