@@ -1,4 +1,5 @@
 #include <string>
+#include <cstring>
 #include <iostream>
 #include <queue>
 #include <fstream>
@@ -50,11 +51,11 @@ void make_decisions(string opponent_last_move)
 	{
 		decisions.push("confess");
                 decisions.push("confess");
-		decisions.push("silence");
+		decisions.push("silent");
 	}
 	else
 	{
-		queue<string> decisions = load_queue_from_file();
+		decisions = load_queue_from_file();
         	decisions.push(opponent_last_move);
 	}
 	cout << decisions.front() << endl;
