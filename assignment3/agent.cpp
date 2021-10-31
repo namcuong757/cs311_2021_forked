@@ -65,6 +65,12 @@ void make_decisions(string opponent_last_move)
 
 int main(int argc, char** argv)
 {
-	make_decisions(argv[1]);
+	for(int i = 1; i < argc; ++i)
+	{
+		if(strcmp(argv[i], "zero") == 0 || strcmp(argv[i], "confess") == 0 ||strcmp(argv[i], "silent") == 0)
+		{
+			make_decisions(argv[i]);
+		}
+	}
 	return 0;
 }
