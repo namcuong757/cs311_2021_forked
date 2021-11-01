@@ -51,7 +51,8 @@ void make_decisions(string opponent_last_move)
 	{
 		decisions.push("confess");
                 decisions.push("confess");
-		decisions.push("silent");
+		decisions.push("confess");
+		decisions.push("confess");
 	}
 	else
 	{
