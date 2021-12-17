@@ -144,37 +144,44 @@ vector<int> fill_up_vector()
 }
 int main()
 {
-	vector<int> list = fill_up_vector();
-	int size = list.size();
-	int array[size];
-       	for(int i = 0; i < size; ++i)
+	int size;
+	do
 	{
-		array[i] = list[i];
-	}
-	// bubble	
-	auto start = high_resolution_clock::now();
-	bubble_sort(list, size);
-	auto stop = high_resolution_clock::now();
-	auto time = duration_cast<microseconds>(stop - start);
-	cout << "\nBubble sort total time: " << time.count() << " microseconds" << endl;
-	//quick
-	auto start1 = high_resolution_clock::now();
-        quick_sort(list, 0, size - 1);
-        auto stop1 = high_resolution_clock::now();
-        auto time1 = duration_cast<microseconds>(stop1 - start1);
-        cout << "Quick sort total time: " << time1.count() << " microseconds" << endl;
-	//merge
-	auto start2 = high_resolution_clock::now();
-        merge_sort(array, 0, size - 1);
-        auto stop2 = high_resolution_clock::now();
-        auto time2 = duration_cast<microseconds>(stop2 - start2);
-        cout << "Merge sort total time: " << time2.count() << " microseconds" << endl;
-	//selection
-	auto start3 = high_resolution_clock::now();
-        selection_sort(list, size);
-        auto stop3 = high_resolution_clock::now();
-        auto time3 = duration_cast<microseconds>(stop3 - start3);
-        cout << "Selection sort total time: " << time3.count() << " microseconds" << endl;
-	cout << endl;
+		vector<int> list = fill_up_vector();
+		size = list.size();
+		int array[size];
+		if(size > 0)
+		{
+			for(int i = 0; i < size; ++i)
+			{
+				array[i] = list[i];
+			}
+			// bubble	
+			auto start = high_resolution_clock::now();
+			bubble_sort(list, size);
+			auto stop = high_resolution_clock::now();
+			auto time = duration_cast<microseconds>(stop - start);
+			cout << "\nBubble sort total time: " << time.count() << " microseconds" << endl;
+			//quick
+			auto start1 = high_resolution_clock::now();
+			quick_sort(list, 0, size - 1);
+			auto stop1 = high_resolution_clock::now();
+			auto time1 = duration_cast<microseconds>(stop1 - start1);
+			cout << "Quick sort total time: " << time1.count() << " microseconds" << endl;
+			//merge
+			auto start2 = high_resolution_clock::now();
+			merge_sort(array, 0, size - 1);
+			auto stop2 = high_resolution_clock::now();
+			auto time2 = duration_cast<microseconds>(stop2 - start2);
+			cout << "Merge sort total time: " << time2.count() << " microseconds" << endl;
+			//selection
+			auto start3 = high_resolution_clock::now();
+			selection_sort(list, size);
+			auto stop3 = high_resolution_clock::now();
+			auto time3 = duration_cast<microseconds>(stop3 - start3);
+			cout << "Selection sort total time: " << time3.count() << " microseconds" << endl;
+			cout << endl;
+		}
+	}while(size > 0);
 	return 0;
 }
