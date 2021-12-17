@@ -53,65 +53,6 @@ void quick_sort(vector<int>& list,int first_index, int last_index)
 		quick_sort(list,pivot + 1, last_index);
 	}
 }
-//void merge(int list[], int first_index, int middle_index, int last_index)
-//{
-//	int i, j, k, sub_first, sub_last;
-//	sub_first = middle_index - first_index + 1;
-//       	sub_last = last_index - middle_index;
-//	int temp_first[sub_first];
-//	int temp_last[sub_last];
-//	for(i = 0; i < sub_first; i++)
-//	{
-//		temp_first[i] = list[first_index + i];
-//	}
-//	for(j = 0; j < sub_last; j++)
-//	{
-//
-//		temp_last[j] = list[middle_index + 1 + j];
-//	}
-//	i = 0;
-//       	j = 0;
-//       	k = first_index;
-//	while(i < sub_first && j < sub_last)
-//       	{
-//		if(temp_first[i] <= temp_last[j])
-//	       	{
-//			list[k] = temp_first[i];
-//			i++;
-//			k++;
-//		}
-//		else
-//		{
-//			list[k] = temp_last[j];
-//			j++;
-//			k++;
-//		}
-//	}
-//	while(i < sub_first)
-//	{	
-//		list[k] = temp_first[i];
-//		i++;
-//	       	k++;
-//	}
-//	while(j < sub_last)
-//	{
-//		list[k] = temp_last[j];
-//		j++;
-//	       	k++;
-//	}
-//}
-//void mergeSort(int list[], int first_index, int last_index) 
-//{
-//	int m;
-//	if(first_index < last_index) 
-//	{
-//		int m = first_index + (last_index - first)/2;
-//		// Sort first and second arrays
-//		mergeSort(array, l, m);
-//		mergeSort(array, m+1, r);
-//		merge(array, l, m, r);
-//	}
-//}
 // Merge Sort
 void merge(int list[], int first_index, int middle_index, int last_index)
 {
